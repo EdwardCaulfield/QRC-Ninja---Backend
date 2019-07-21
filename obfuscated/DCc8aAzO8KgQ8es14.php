@@ -35,7 +35,7 @@ if(isset($postdata) && !empty($postdata))
     return http_response_code(410);
   }
   // Store.
-  $statment = $db_connection->prepare( "INSERT INTO ninja_admin_test ( userID, displayName, urlString, shortNameUsed, shortName, backgroundName, headerLanguage, callToActionLine1, callToActionLine2, dateCreated, dateLastModified, validUntil )  VALUES  (?,?,?,?,?,?,?,?,?,?,?,?) ");    
+  $statment = $db_connection->prepare( "INSERT INTO ".DB_TABLE_NAME." ( userID, displayName, urlString, shortNameUsed, shortName, backgroundName, headerLanguage, callToActionLine1, callToActionLine2, dateCreated, dateLastModified, validUntil )  VALUES  (?,?,?,?,?,?,?,?,?,?,?,?) ");    
 
   $statment->bind_param("ississssssss", 
   $request->data->userID,
